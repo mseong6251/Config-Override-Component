@@ -1,0 +1,15 @@
+version: 2.1
+
+jobs:
+  custom-test:
+    docker:
+      - image: cimg/node:18.0
+    steps:
+      - checkout
+      - run: echo "Running CUSTOM test suite!"
+      - run: echo "This job overrides the standard test job"
+      - run: 
+          name: "Custom test step"
+          command: |
+            echo "This is where you'd run your custom tests"
+            echo "For example: npm test or pytest"
